@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game JavaScript</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+    
+    <p id="title">Hangman Game</p>
+
+    <!-- Modal for Game Over -->
+    <div class="game-modal">
+        <div class="content">
+            <img id="modal-img" decoding="async" src="images/12345.png" alt="gif">
+            <h4 id="modal-title">Game Over!</h4>
+            <p id="modal-text">The correct word was: <b>rainbow</b></p>
+            <button class="play-again">Play Again</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hangman image box -->
+        <div class="hangman-box">
+            <img id="hangman-img" src="images/12345.png" alt="Hangman Image" onerror="this.onerror=null; this.src='images/12345.png';">
+        </div>
+
+        <!-- Word display, hints, and guesses -->
+        <div class="game-box">
+            <ul class="word-display"></ul>
+            <h4 class="hint-text">Hint: <b></b></h4>
+            <h4 class="guesses-text">Incorrect guesses: <b>0 / 6</b></h4>
+
+            <!-- Keyboard buttons will be generated here by JavaScript -->
+            <div class="keyboard"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="word-list.js" defer></script>
+    <script src="script.js" defer></script>
+
+</body>
+</html>
