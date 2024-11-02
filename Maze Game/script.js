@@ -196,6 +196,43 @@ function animateSolution(solution) {
   }, 100);
 }
 
+// function movePlayer(event) {
+//   const directionMap = {
+//     ArrowUp: { dx: 0, dy: -1 },
+//     ArrowDown: { dx: 0, dy: 1 },
+//     ArrowLeft: { dx: -1, dy: 0 },
+//     ArrowRight: { dx: 1, dy: 0 }
+//   };
+
+//   if (PlayerCanMove) {
+//     if (directionMap[event.key]) {
+//       const { dx, dy } = directionMap[event.key];
+//       const newX = playerPosition.x + dx;
+//       const newY = playerPosition.y + dy;
+
+//       if (
+//         newX >= 0 &&
+//         newY >= 0 &&
+//         newX < size &&
+//         newY < size &&
+//         canMove(maze[playerPosition.y][playerPosition.x], dx, dy)
+//       ) {
+//         previousPosition = { ...playerPosition };
+//         playerPosition.x = newX;
+//         playerPosition.y = newY;
+//         updatePlayerPosition(dx, dy);
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
 function movePlayer(event) {
   const directionMap = {
     ArrowUp: { dx: 0, dy: -1 },
@@ -204,24 +241,27 @@ function movePlayer(event) {
     ArrowRight: { dx: 1, dy: 0 }
   };
 
-  if (PlayerCanMove) {
-    if (directionMap[event.key]) {
-      const { dx, dy } = directionMap[event.key];
-      const newX = playerPosition.x + dx;
-      const newY = playerPosition.y + dy;
+  // Prevent default behavior for arrow keys
+  if (directionMap[event.key]) {
+    event.preventDefault();
+  }
 
-      if (
-        newX >= 0 &&
-        newY >= 0 &&
-        newX < size &&
-        newY < size &&
-        canMove(maze[playerPosition.y][playerPosition.x], dx, dy)
-      ) {
-        previousPosition = { ...playerPosition };
-        playerPosition.x = newX;
-        playerPosition.y = newY;
-        updatePlayerPosition(dx, dy);
-      }
+  if (PlayerCanMove && directionMap[event.key]) {
+    const { dx, dy } = directionMap[event.key];
+    const newX = playerPosition.x + dx;
+    const newY = playerPosition.y + dy;
+
+    if (
+      newX >= 0 &&
+      newY >= 0 &&
+      newX < size &&
+      newY < size &&
+      canMove(maze[playerPosition.y][playerPosition.x], dx, dy)
+    ) {
+      previousPosition = { ...playerPosition };
+      playerPosition.x = newX;
+      playerPosition.y = newY;
+      updatePlayerPosition(dx, dy);
     }
   }
 }
