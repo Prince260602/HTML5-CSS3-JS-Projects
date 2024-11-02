@@ -4,18 +4,18 @@ body {
     align-items: center;
     height: 100vh;
     margin: 70px;
-    background-color: #d8f3dc;
+    background-color: #ffe046;
     overflow: fixed;
   }
   :root {
-    --border-color: #38a3a5;
+    --border-color: #7b91ce;
     --border-size: 1px;
     --border-wh: 100%;
     --cell-size: 20px;
   }
   button {
-    background: #38a3a5;
-    border: 2px solid #57cc99;
+    background: #7b91ce;
+    border: 2px solid #7b91ce;
     color: #d8f3dc;
     padding: 5px;
     font-size: large;
@@ -42,7 +42,7 @@ body {
   }
   
   .cell.solution {
-    background-color: #57cc99;
+    background-color: #ffe046;
   }
   
   #controls {
