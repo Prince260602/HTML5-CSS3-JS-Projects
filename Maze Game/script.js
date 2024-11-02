@@ -227,12 +227,6 @@ function animateSolution(solution) {
 // }
 
 
-
-
-
-
-
-
 function movePlayer(event) {
   const directionMap = {
     ArrowUp: { dx: 0, dy: -1 },
@@ -241,7 +235,6 @@ function movePlayer(event) {
     ArrowRight: { dx: 1, dy: 0 }
   };
 
-  // Prevent default behavior for arrow keys
   if (directionMap[event.key]) {
     event.preventDefault();
   }
@@ -289,7 +282,7 @@ function updatePlayerPosition(dx, dy) {
     newCell.appendChild(newSpan);
   }
 
-  // Oyuncu geri giderse class güncelleme
+ 
   if (
     previousPositions.length > 0 &&
     previousPositions[previousPositions.length - 1].x === playerPosition.x &&
