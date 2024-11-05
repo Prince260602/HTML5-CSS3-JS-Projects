@@ -1,6 +1,8 @@
 body {
+  margin-top: 200px;
     background-color: #f2f2f2;
     font-family: Arial, sans-serif;
+    padding: 40px;
   }
   
   .calculator {
@@ -40,7 +42,7 @@ body {
   }
   
   body {
-    background-image: linear-gradient(to right top, #f46b45, #eea849, #e1c35c, #c5d169, #a8dd76, #8dd46e, #6dcf66, #4ec95d, #3db351, #35a84a, #309d43, #32923d);
+    background-image: url('bk.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
